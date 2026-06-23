@@ -1,0 +1,17 @@
+name: Ping Render Health Endpoint
+
+on:
+  schedule:
+    - cron: '* * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping health endpoint
+        run: |
+          echo "Pinging endpoint at $(date -u)"
+          curl -v -f https://waste-tracker-backend-city.onrender.com/health
+          echo "Success"
