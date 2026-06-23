@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "ping:health": "node scripts/ping-health.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

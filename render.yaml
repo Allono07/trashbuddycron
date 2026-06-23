@@ -1,0 +1,11 @@
+services:
+  - type: cron
+    name: waste-tracker-health-ping
+    runtime: node
+    plan: starter
+    schedule: "*/5 * * * *"
+    buildCommand: npm ci
+    startCommand: npm run ping:health
+    envVars:
+      - key: HEALTH_ENDPOINT
+        value: https://waste-tracker-backend-city.onrender.com/health
